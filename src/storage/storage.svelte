@@ -41,10 +41,10 @@
     await model.removeItem(key);
   };
   const onTapSave = async (key: string) => {
+    model.setItem(editingKey, editingVal); // set value anyway
     if (editingKey !== key) {
       await model.removeItem(key); // dirty key
     }
-    model.setItem(editingKey, editingVal); // set value anyway
     resetEditState(); // reset editing status
   };
   const onTapEdit = async (key: string, value: string, i: number) => {
